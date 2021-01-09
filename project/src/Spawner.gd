@@ -23,7 +23,6 @@ func _ready():
 
 
 func _new_wave():
-	#Waves keep going even after game-over
 	var groups := []
 	for _i in _wave_size:
 		var wave_type := randi()%3
