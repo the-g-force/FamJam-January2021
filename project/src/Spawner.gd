@@ -11,12 +11,13 @@ var screensize:Vector2
 var _enemies_in_wave := 0
 var _time_between_waves := 3
 var _wave_size := 1
-var _group_0 := [Vector2(0, 150), Vector2(0, 300), Vector2(0, 450)]
-var _group_1 := [Vector2(150, 150), Vector2(0, 300), Vector2(150, 450)]
-var _group_2 := [Vector2(0, 150), Vector2(150, 300), Vector2(0, 450)]
-var _group_3 := [Vector2(0, 50), Vector2(0, 550)]
-var _group_4 := [Vector2(0, 300), Vector2(150, 150), Vector2(150,450), Vector2(300,300)]
-
+var _waveforms := [
+	[Vector2(0, 150), Vector2(0, 300), Vector2(0, 450)],
+	[Vector2(150, 150), Vector2(0, 300), Vector2(150, 450)],
+	[Vector2(0, 150), Vector2(150, 300), Vector2(0, 450)],
+	[Vector2(0, 50), Vector2(0, 550)],
+	[Vector2(0, 300), Vector2(150, 150), Vector2(150,450), Vector2(300,300)],
+]
 
 func _ready():
 	screensize = get_viewport_rect().size
@@ -25,8 +26,8 @@ func _ready():
 func _new_wave():
 	var groups := []
 	for _i in _wave_size:
-		var wave_type := randi()%5
-		var wave:Array = get("_group_"+str(wave_type))
+		var wave_type := randi()%_waveforms.size()
+		var wave:Array = _waveforms[wave_type]
 		groups.append(wave)
 		_enemies_in_wave += wave.size()
 	for wave in groups:
