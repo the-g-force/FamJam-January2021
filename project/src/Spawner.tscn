@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+signal alien_created(alien)
+"
+
+[node name="Spawner" type="Node2D"]
+script = SubResource( 1 )
