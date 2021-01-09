@@ -26,7 +26,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="FamJam-January2021"
+config/name="Commander Quacks Saves the Day"
 run/main_scene="res://src/SplashScreen.tscn"
 config/icon="res://icon.png"
 
