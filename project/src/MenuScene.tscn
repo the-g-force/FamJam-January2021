@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://src/MenuScene.gd" type="Script" id=1]
 [ext_resource path="res://fonts/TurretRoad-Bold.ttf" type="DynamicFontData" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/foreground.png" type="Texture" id=7]
 [ext_resource path="res://assets/bullet-blue.png" type="Texture" id=8]
 [ext_resource path="res://assets/bullet-yellow.png" type="Texture" id=9]
+[ext_resource path="res://src/JetDuck.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/g1375.png" type="Texture" id=11]
 [ext_resource path="res://assets/image1920.png" type="Texture" id=12]
 
@@ -62,10 +63,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.3, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 80, -8 ), Vector2( 248.916, -10.9878 ) ]
+"values": [ Vector2( 4.56717, 13.7015 ), Vector2( 4.56717, 13.7015 ), Vector2( 470.419, 9.13436 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("duck/bullet-yellow2:position")
@@ -268,19 +269,20 @@ __meta__ = {
 }
 
 [node name="image1942" type="Sprite" parent="."]
-position = Vector2( 816.704, 351.731 )
-scale = Vector2( 2.89979, 2.89979 )
+position = Vector2( 760, 360 )
+scale = Vector2( 3.14231, 3.14231 )
+z_index = 50
 texture = ExtResource( 3 )
 
 [node name="bullet-blue" type="Sprite" parent="image1942"]
 visible = false
-position = Vector2( -86.1807, 6.47975 )
+position = Vector2( -93.9564, 6.47975 )
 scale = Vector2( 0.404985, 0.404985 )
 texture = ExtResource( 8 )
 
 [node name="bullet-blue2" type="Sprite" parent="image1942"]
 visible = false
-position = Vector2( -138.018, 6.47975 )
+position = Vector2( -145.794, 6.47975 )
 scale = Vector2( 0.404985, 0.404985 )
 texture = ExtResource( 8 )
 
@@ -297,29 +299,31 @@ scale = Vector2( 0.404985, 0.404985 )
 texture = ExtResource( 8 )
 
 [node name="duck" type="Sprite" parent="."]
-position = Vector2( 278.065, 390.065 )
+position = Vector2( 248, 360 )
 scale = Vector2( 1.75163, 1.75163 )
+z_index = 20
 texture = ExtResource( 4 )
 
 [node name="bullet-yellow" type="Sprite" parent="duck"]
-visible = false
-position = Vector2( 215.133, -10.3902 )
+position = Vector2( 470.419, 9.13436 )
 texture = ExtResource( 9 )
 
 [node name="bullet-yellow2" type="Sprite" parent="duck"]
 visible = false
-position = Vector2( 278.142, -20.828 )
+position = Vector2( 305.677, -24.035 )
 texture = ExtResource( 9 )
 
 [node name="bullet-yellow3" type="Sprite" parent="duck"]
 visible = false
-position = Vector2( 413.658, -8.74265 )
+position = Vector2( 441.072, -8.92831 )
 texture = ExtResource( 9 )
 
 [node name="bullet-yellow4" type="Sprite" parent="duck"]
 visible = false
-position = Vector2( 545.683, -17.8657 )
+position = Vector2( 561.745, -18.6261 )
 texture = ExtResource( 9 )
+
+[node name="Node2D" parent="duck" instance=ExtResource( 10 )]
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
@@ -354,8 +358,8 @@ __meta__ = {
 }
 
 [node name="image1920" type="Sprite" parent="."]
-position = Vector2( 1067.93, 174.64 )
-scale = Vector2( 0.712254, 0.712254 )
+position = Vector2( 936, 232 )
+scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 12 )
 
 [node name="g1375" type="Sprite" parent="."]

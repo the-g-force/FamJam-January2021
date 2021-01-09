@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/StoryScene.gd" type="Script" id=1]
 [ext_resource path="res://src/JetDuck.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/g1375.png" type="Texture" id=6]
 [ext_resource path="res://fonts/Roboto-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://fonts/TurretRoad-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://assets/bubble.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 8 )
@@ -57,14 +58,26 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 6.5, 9.8 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 6.5, 9.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ false, true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("bubble:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 6.5, 9.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
 }
 
 [sub_resource type="DynamicFont" id=3]
-size = 32
+size = 28
 font_data = ExtResource( 7 )
 
 [node name="StoryScene" type="Node2D"]
@@ -105,33 +118,40 @@ __meta__ = {
 anims/Story = SubResource( 2 )
 
 [node name="copter" type="Sprite" parent="."]
-position = Vector2( -85.4676, 141.806 )
+position = Vector2( 392.162, 459.665 )
 scale = Vector2( -1, 1 )
 z_index = 50
 z_as_relative = false
 texture = ExtResource( 5 )
 
 [node name="JetDuck" parent="copter" instance=ExtResource( 2 )]
-position = Vector2( -290.661, 20.1775 )
+position = Vector2( -720.364, -186.423 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 z_index = -1
 
 [node name="Alien" type="Sprite" parent="."]
-position = Vector2( 1122.32, 91.2495 )
+position = Vector2( -84.3763, 97.9237 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 texture = ExtResource( 6 )
 
+[node name="bubble" type="Sprite" parent="."]
+visible = false
+position = Vector2( 755.986, 317.589 )
+texture = ExtResource( 9 )
+
 [node name="DuckSpeech" type="Label" parent="."]
 visible = false
-margin_left = 563.136
-margin_top = 225.439
-margin_right = 1020.14
-margin_bottom = 350.439
+margin_left = 548.0
+margin_top = 219.0
+margin_right = 982.0
+margin_bottom = 337.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "The aliens are taking over Mars! I must use my guns to stop them!"
+text = "The aliens are taking over Mars! 
+I must use my guns to stop them!"
+valign = 2
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
