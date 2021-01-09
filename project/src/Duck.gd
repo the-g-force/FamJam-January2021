@@ -38,8 +38,3 @@ func _physics_process(delta):
 		bullet.good = true
 		bullet.going_left = false
 		get_parent().add_child(bullet)
-	
-
-func _draw():
-	var shape = $CollisionShape2D.shape
-	draw_rect(Rect2(-shape.extents.x/2,-shape.extents.y/2,shape.extents.x*2, shape.extents.y*2), Color.tan)
