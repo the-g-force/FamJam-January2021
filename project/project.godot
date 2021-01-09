@@ -8,9 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "Alien",
+"language": "GDScript",
+"path": "res://src/Alien.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Bullet",
+"language": "GDScript",
+"path": "res://src/Bullet.gd"
+} ]
 _global_script_class_icons={
-
+"Alien": "",
+"Bullet": ""
 }
 
 [application]
