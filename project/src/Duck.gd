@@ -15,6 +15,8 @@ onready var _DuckBullet := load("res://src/DuckBullet.tscn")
 onready var _bullet_spawn_point := $BulletSpawnPoint
 onready var _explosionfollow := $Explosionpath/PathFollow2D
 onready var _screen_size := get_viewport_rect().size
+onready var _max_y := _screen_size.y - 100
+
 
 
 func _physics_process(delta):
@@ -46,7 +48,7 @@ func _physics_process(delta):
 			
 		# Keep duck in playable area
 		position.x = clamp(position.x, 0, _screen_size.x/2)
-		position.y = clamp(position.y, 0, _screen_size.y)
+		position.y = clamp(position.y, 0, _max_y)
 		
 		if Input.is_action_just_pressed("fire"):
 			var bullet : Node2D = _DuckBullet.instance()

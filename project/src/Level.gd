@@ -37,10 +37,5 @@ func _on_Alien_destroyed(_alien:Object):
 	score += 1
 
 
-func _on_Ground_body_entered(body):
-	if body is Duck:
-		body.damage()
-
-
 func _on_Duck_death_complete():
 	_death_control.visible = true
