@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/background.png" type="Texture" id=1]
 [ext_resource path="res://src/Level.gd" type="Script" id=2]
@@ -6,24 +6,45 @@
 [ext_resource path="res://assets/the_test.ogg" type="AudioStream" id=4]
 [ext_resource path="res://assets/foreground.png" type="Texture" id=5]
 [ext_resource path="res://src/HUD.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/sky.png" type="Texture" id=7]
+[ext_resource path="res://assets/moon.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 556.391, 25 )
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 2 )
+background_scroll_speed = 500.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 1 )
 motion_mirroring = Vector2( 2048, 0 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Background"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Sky"]
+texture = ExtResource( 7 )
+centered = false
+
+[node name="Moon" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( 1.5874, -1.5874 )
+motion_scale = Vector2( 0.29, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Moon"]
+position = Vector2( 85.7197, 31.748 )
+texture = ExtResource( 8 )
+
+[node name="Mountains" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Mountains"]
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Foreground" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 1.22, 1 )
+motion_mirroring = Vector2( 2048, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/Foreground"]
 texture = ExtResource( 5 )
