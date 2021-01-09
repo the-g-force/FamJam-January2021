@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/SplashScreen.gd" type="Script" id=1]
+[ext_resource path="res://assets/sky.png" type="Texture" id=2]
+[ext_resource path="res://fonts/TurretRoad-ExtraBold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://fonts/TurretRoad-Regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+outline_size = 3
+outline_color = Color( 0.203922, 0.203922, 0.203922, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 4 )
 
 [node name="SplashScreen" type="Control"]
 anchor_right = 1.0
@@ -10,19 +23,46 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-margin_left = 414.311
-margin_top = 307.956
-margin_right = 563.311
-margin_bottom = 321.956
+[node name="TheGForcePresents" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -176.0
+margin_top = -18.0
+margin_right = 176.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "The G-Force Presents..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label2" type="Label" parent="."]
-margin_left = 406.374
-margin_top = 442.884
-margin_right = 570.374
-margin_bottom = 456.884
+[node name="PressAKey" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -146.5
+margin_top = 191.044
+margin_right = 146.5
+margin_bottom = 218.044
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "Press any key to continue"
 __meta__ = {
 "_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 0, 600 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
 }

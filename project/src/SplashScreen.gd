@@ -1,5 +1,13 @@
 extends Control
 
+export var vertical_speed := 50
+
+onready var _parallax_background := $ParallaxBackground
+
+
+func _process(delta):
+	_parallax_background.scroll_offset.y -= vertical_speed * delta
+
 func _input(event):
 	if _is_continue_trigger(event):
 		var _ignored := get_tree().change_scene("res://src/MenuScene.tscn")
