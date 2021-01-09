@@ -57,7 +57,7 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="Animation" id=12]
 resource_name = "Intro"
-length = 3.0
+length = 10.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("duck/bullet-yellow:position")
 tracks/0/interp = 1
@@ -284,6 +284,30 @@ tracks/17/keys = {
 "update": 0,
 "values": [ 0.0, 0.0, -34.7 ]
 }
+tracks/18/type = "value"
+tracks/18/path = NodePath("image1920:flip_h")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 2.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("g1375:flip_h")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 2.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [node name="MenuScene" type="Control"]
 anchor_right = 1.0
@@ -409,11 +433,13 @@ __meta__ = {
 position = Vector2( 1120, 248 )
 scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 12 )
+flip_h = true
 
 [node name="g1375" type="Sprite" parent="."]
 position = Vector2( 1128, 504 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 11 )
+flip_h = true
 
 [node name="PlayButton" type="Button" parent="."]
 anchor_left = 0.5
