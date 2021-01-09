@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Duck.gd" type="Script" id=1]
 [ext_resource path="res://assets/duck.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 33, 38 )
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, -49.9467, -92.7581, 49.9467, 92.7581, 58.9734, -142.028, -9.51366, 66.5956, 9.51366, -66.5956, -24.2711, -182.461, -41.6222, -1.18921, 41.6222, 1.18921, 70.8654, -268.084, 48.7575, 23.7841, -48.7575, -23.7841, 146.975, -138.46, 0, 0, 0, 0, 125.569, -75.4323 )
+}
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.192053, 0.516556, 0.81457, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 0, 1, 1, 0.505882, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1 )
 
 [node name="Duck" type="KinematicBody2D"]
 collision_mask = 3
@@ -16,5 +25,24 @@ shape = SubResource( 1 )
 [node name="BulletSpawnPoint" type="Node2D" parent="."]
 position = Vector2( 33, 9 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Explosionpath" type="Path2D" parent="."]
+curve = SubResource( 2 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Explosionpath"]
+rotation = -1.52581
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Explosionpath/PathFollow2D"]
+position = Vector2( 6.85476, -36.4076 )
+rotation = 1.52193
+scale = Vector2( 1, 1 )
+amount = 20
+local_coords = false
+direction = Vector2( -1, 0 )
+gravity = Vector2( 0, 0 )
+initial_velocity = 20.0
+scale_amount = 3.0
+color_ramp = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Explosionpath/PathFollow2D"]
+rotation = 1.52193
 texture = ExtResource( 2 )

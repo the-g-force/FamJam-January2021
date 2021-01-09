@@ -17,8 +17,7 @@ func _process(delta):
 	var velocity := Vector2(-delta*speed, 0)
 	var collision := move_and_collide(velocity)
 	if collision!=null:
-		emit_signal("destroyed", self)
-		queue_free()
+		damage()
 
 
 func _draw():
@@ -42,4 +41,7 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func damage():
 	emit_signal("destroyed", self)
+	var _explosion:Node2D = load("res://src/Explosion.tscn").instance()
+	_explosion.position = get_global_transform().origin
+	get_tree().get_root().add_child(_explosion)
 	queue_free()
