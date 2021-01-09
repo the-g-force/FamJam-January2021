@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 const _DeathControl := preload("res://src/DeathControl.tscn")
 

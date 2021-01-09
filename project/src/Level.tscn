@@ -10,8 +10,13 @@
 [ext_resource path="res://src/DeathControl.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Spawner.tscn" type="PackedScene" id=10]
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
