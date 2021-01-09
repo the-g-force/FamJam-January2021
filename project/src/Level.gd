@@ -30,3 +30,8 @@ func _on_Timer_timeout():
 
 func _on_Alien_destroyed(_alien:Object):
 	print("Alien was destroyed, get some points")
+
+
+func _on_Ground_body_entered(body):
+	if body is Duck:
+		body.damage()

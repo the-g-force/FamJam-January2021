@@ -39,3 +39,4 @@ __meta__ = {
 [node name="Duck" parent="." instance=ExtResource( 3 )]
 position = Vector2( 118.391, 268 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Ground" to="." method="_on_Ground_body_entered"]
