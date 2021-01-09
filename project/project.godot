@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Alien",
 "language": "GDScript",
 "path": "res://src/Alien.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Bullet",
+"language": "GDScript",
+"path": "res://src/Bullet.gd"
 } ]
 _global_script_class_icons={
-"Alien": ""
+"Alien": "",
+"Bullet": ""
 }
 
 [application]

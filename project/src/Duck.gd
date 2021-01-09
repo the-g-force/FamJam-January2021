@@ -35,6 +35,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("fire"):
 		var bullet := _Bullet.instance()
 		bullet.position = position + $BulletSpawnPoint.position
+		bullet.good = true
+		bullet.going_left = false
 		get_parent().add_child(bullet)
 	
 
