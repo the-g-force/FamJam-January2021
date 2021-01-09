@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/StoryScene.gd" type="Script" id=1]
 [ext_resource path="res://src/JetDuck.tscn" type="PackedScene" id=2]
@@ -7,9 +7,12 @@
 [ext_resource path="res://assets/copter.png" type="Texture" id=5]
 [ext_resource path="res://assets/g1375.png" type="Texture" id=6]
 [ext_resource path="res://fonts/Roboto-Regular.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://fonts/TurretRoad-Regular.ttf" type="DynamicFontData" id=8]
 
-[sub_resource type="Animation" id=1]
-resource_name = "Story"
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 8 )
+
+[sub_resource type="Animation" id=2]
 length = 14.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("copter/JetDuck:position")
@@ -60,7 +63,7 @@ tracks/3/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 32
 font_data = ExtResource( 7 )
 
@@ -87,10 +90,11 @@ __meta__ = {
 }
 
 [node name="MainMenuButton" type="Button" parent="."]
-margin_left = 860.371
-margin_top = 565.114
-margin_right = 1006.37
-margin_bottom = 585.114
+margin_left = 844.656
+margin_top = 567.359
+margin_right = 1018.66
+margin_bottom = 591.359
+custom_fonts/font = SubResource( 1 )
 text = "Return to Main Menu"
 __meta__ = {
 "_edit_lock_": true,
@@ -98,7 +102,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Story = SubResource( 1 )
+anims/Story = SubResource( 2 )
 
 [node name="copter" type="Sprite" parent="."]
 position = Vector2( -85.4676, 141.806 )
@@ -125,7 +129,7 @@ margin_left = 563.136
 margin_top = 225.439
 margin_right = 1020.14
 margin_bottom = 350.439
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "The aliens are taking over Mars! I must use my guns to stop them!"
 autowrap = true
