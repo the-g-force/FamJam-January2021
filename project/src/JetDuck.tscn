@@ -6,7 +6,7 @@
 offsets = PoolRealArray( 0, 0.192053, 0.516556, 0.81457, 1 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 0, 1, 1, 0.505882, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1 )
 
-[node name="Node2D" type="Node2D"]
+[node name="JetDuck" type="Node2D"]
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2( -38.5298, -7.04115 )
