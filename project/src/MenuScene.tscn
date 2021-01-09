@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/MenuScene.gd" type="Script" id=1]
 [ext_resource path="res://assets/image1942.png" type="Texture" id=3]
@@ -8,6 +8,8 @@
 [ext_resource path="res://assets/foreground.png" type="Texture" id=7]
 [ext_resource path="res://assets/bullet-blue.png" type="Texture" id=8]
 [ext_resource path="res://assets/bullet-yellow.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=1]
 
 [node name="MenuScene" type="Control"]
 anchor_right = 1.0
@@ -60,32 +62,55 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" type="Control" parent="."]
+[node name="duck" type="Sprite" parent="."]
+position = Vector2( 256, 312 )
+rotation = -0.0523599
+texture = ExtResource( 4 )
+
+[node name="bullet-yellow" type="Sprite" parent="duck"]
+position = Vector2( 80, -8 )
+texture = ExtResource( 9 )
+
+[node name="bullet-yellow2" type="Sprite" parent="duck"]
+position = Vector2( 168, -8 )
+texture = ExtResource( 9 )
+
+[node name="bullet-yellow3" type="Sprite" parent="duck"]
+position = Vector2( 304, -8 )
+texture = ExtResource( 9 )
+
+[node name="image1942" type="Sprite" parent="duck"]
+position = Vector2( 546.185, -27.4526 )
+rotation = 0.0523599
+scale = Vector2( 2.46923, 2.46923 )
+texture = ExtResource( 3 )
+
+[node name="bullet-blue" type="Sprite" parent="duck/image1942"]
+position = Vector2( -55.0779, 6.47975 )
+scale = Vector2( 0.404985, 0.404985 )
+texture = ExtResource( 8 )
+
+[node name="bullet-blue2" type="Sprite" parent="duck/image1942"]
+position = Vector2( -106.916, 6.47975 )
+scale = Vector2( 0.404985, 0.404985 )
+texture = ExtResource( 8 )
+
+[node name="bullet-blue3" type="Sprite" parent="duck/image1942"]
+position = Vector2( -155.514, 6.47975 )
+scale = Vector2( 0.404985, 0.404985 )
+texture = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -20.0
 margin_right = 20.0
-margin_bottom = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 1 )
+text = "Captain Commando"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="duck" type="Sprite" parent="Control"]
-position = Vector2( -236, 280 )
-texture = ExtResource( 4 )
-
-[node name="image1942" type="Sprite" parent="Control"]
-position = Vector2( 308, 256 )
-scale = Vector2( 2.46923, 2.46923 )
-texture = ExtResource( 3 )
-
-[node name="bullet-yellow" type="Sprite" parent="."]
-position = Vector2( 336, 272 )
-texture = ExtResource( 9 )
-
-[node name="bullet-blue" type="Sprite" parent="."]
-position = Vector2( 664, 272 )
-texture = ExtResource( 8 )
 [connection signal="pressed" from="sky/FullScreenButton" to="." method="_on_FullScreenButton_pressed"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="StoryButton" to="." method="_on_StoryButton_pressed"]
