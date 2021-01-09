@@ -1,4 +1,4 @@
-# Untitled
+# Commander Quacks Saves the Day
 
 January 2021 FamJam game by the G-Force
 
@@ -6,8 +6,10 @@ January 2021 FamJam game by the G-Force
 
 See our other games [here](https://the-g-force.github.io).
 
+## Third-Party Assets
+
 ### Fonts
 
-[Turret Road](https://fonts.google.com/specimen/Turret+Road) designed by Dale Sattler
+- [Turret Road](https://fonts.google.com/specimen/Turret+Road) designed by Dale Sattler
 
-[Roboto](https://fonts.google.com/specimen/Roboto) designed by Christian Robertson
+- [Roboto](https://fonts.google.com/specimen/Roboto) designed by Christian Robertson
