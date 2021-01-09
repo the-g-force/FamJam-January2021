@@ -1,13 +1,68 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/StoryScene.gd" type="Script" id=1]
 [ext_resource path="res://src/JetDuck.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/background.png" type="Texture" id=3]
 [ext_resource path="res://assets/sky.png" type="Texture" id=4]
+[ext_resource path="res://assets/copter.png" type="Texture" id=5]
+[ext_resource path="res://assets/g1375.png" type="Texture" id=6]
+[ext_resource path="res://fonts/Roboto-Regular.ttf" type="DynamicFontData" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Story"
-length = 10.0
+length = 14.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("copter/JetDuck:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.2, 4, 10.2, 14 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -290.661, 20.1775 ), Vector2( -290.661, 20.1775 ), Vector2( -445.386, -68.9576 ), Vector2( -445.386, -68.9576 ), Vector2( -720.364, -186.423 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("copter:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.9, 9.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -85.4676, 141.806 ), Vector2( 392.162, 459.665 ), Vector2( 392.162, 459.665 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Alien:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 4.1, 8.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1122.32, 91.2495 ), Vector2( -84.3763, 97.9237 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("DuckSpeech:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 6.5, 9.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 7 )
 
 [node name="StoryScene" type="Node2D"]
 script = ExtResource( 1 )
@@ -45,6 +100,36 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Story = SubResource( 1 )
 
-[node name="JetDuck" parent="." instance=ExtResource( 2 )]
-position = Vector2( 160.611, 127.816 )
+[node name="copter" type="Sprite" parent="."]
+position = Vector2( -85.4676, 141.806 )
+scale = Vector2( -1, 1 )
+z_index = 50
+z_as_relative = false
+texture = ExtResource( 5 )
+
+[node name="JetDuck" parent="copter" instance=ExtResource( 2 )]
+position = Vector2( -290.661, 20.1775 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+z_index = -1
+
+[node name="Alien" type="Sprite" parent="."]
+position = Vector2( 1122.32, 91.2495 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+texture = ExtResource( 6 )
+
+[node name="DuckSpeech" type="Label" parent="."]
+visible = false
+margin_left = 563.136
+margin_top = 225.439
+margin_right = 1020.14
+margin_bottom = 350.439
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "The aliens are taking over Mars! I must use my guns to stop them!"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
