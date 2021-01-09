@@ -31,3 +31,4 @@ curve = SubResource( 2 )
 rotation = -1.52581
 
 [node name="JetDuck" parent="Explosionpath/PathFollow2D" instance=ExtResource( 2 )]
+rotation = 1.57316
