@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/background.png" type="Texture" id=1]
 [ext_resource path="res://src/Level.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://src/HUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/sky.png" type="Texture" id=7]
 [ext_resource path="res://assets/moon.png" type="Texture" id=8]
+[ext_resource path="res://src/DeathControl.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 556.391, 25 )
@@ -80,5 +81,9 @@ margin_left = 443.668
 margin_top = 1.7818
 margin_right = 443.668
 margin_bottom = 1.7818
+
+[node name="DeathControl" parent="." instance=ExtResource( 9 )]
+visible = false
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="body_entered" from="Ground" to="." method="_on_Ground_body_entered"]
+[connection signal="death_complete" from="Duck" to="." method="_on_Duck_death_complete"]

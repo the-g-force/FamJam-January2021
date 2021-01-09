@@ -1,7 +1,7 @@
 extends Node2D
 
-
 const alien := preload("res://src/Alien.tscn")
+const _DeathControl := preload("res://src/DeathControl.tscn")
 
 var screensize : Vector2
 var scrolling_left := true #If true, aliens come from right
@@ -9,6 +9,8 @@ var score := 0
 
 export var alien_spawn_interval := 2.0
 export var background_scroll_speed := 75.0
+
+onready var _death_control := $DeathControl
 
 
 func _ready():
@@ -38,3 +40,7 @@ func _on_Alien_destroyed(_alien:Object):
 func _on_Ground_body_entered(body):
 	if body is Duck:
 		body.damage()
+
+
+func _on_Duck_death_complete():
+	_death_control.visible = true

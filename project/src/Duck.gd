@@ -1,6 +1,8 @@
 class_name Duck
 extends KinematicBody2D
 
+signal death_complete
+
 export var gravity := 20.0
 export var speed := 50
 export var max_speed := 15
@@ -58,6 +60,7 @@ func _physics_process(delta):
 			var _explosion:Node2D = load("res://src/Explosion.tscn").instance()
 			_explosion.position = $Explosionpath/PathFollow2D/JetDuck.get_global_transform().origin
 			get_tree().get_root().add_child(_explosion)
+			emit_signal("death_complete")
 			queue_free()
 
 
