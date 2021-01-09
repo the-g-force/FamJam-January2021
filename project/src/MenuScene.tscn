@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://src/MenuScene.gd" type="Script" id=1]
 [ext_resource path="res://fonts/TurretRoad-Bold.ttf" type="DynamicFontData" id=2]
@@ -52,6 +52,142 @@ bg_color = Color( 0.219608, 0.0509804, 0.0509804, 1 )
 size = 24
 font_data = ExtResource( 2 )
 
+[sub_resource type="Animation" id=12]
+resource_name = "Intro"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("duck/bullet-yellow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 80, -8 ), Vector2( 248.916, -10.9878 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("duck/bullet-yellow2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 168, -8 ), Vector2( 305.677, -24.035 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("duck/bullet-yellow3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 304, -8 ), Vector2( 441.072, -8.92831 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("duck/bullet-yellow4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 481.436, -14.8239 ), Vector2( 561.745, -18.6261 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("image1942/bullet-blue:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -55.0779, 6.47975 ), Vector2( -93.9564, 6.47975 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("image1942/bullet-blue2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -106.916, 6.47975 ), Vector2( -145.794, 6.47975 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("image1942/bullet-blue3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("g1375:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1096, 440 ), Vector2( 896, 504 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("g1375:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 12.996 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 1.5, 1.5 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("image1920:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1120, 152 ), Vector2( 936, 232 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("image1920:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 6.27667 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 1.25, 1.25 ) ]
+}
+
 [node name="MenuScene" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -89,12 +225,12 @@ scale = Vector2( 2.46923, 2.46923 )
 texture = ExtResource( 3 )
 
 [node name="bullet-blue" type="Sprite" parent="image1942"]
-position = Vector2( -55.0779, 6.47975 )
+position = Vector2( -93.9564, 6.47975 )
 scale = Vector2( 0.404985, 0.404985 )
 texture = ExtResource( 8 )
 
 [node name="bullet-blue2" type="Sprite" parent="image1942"]
-position = Vector2( -106.916, 6.47975 )
+position = Vector2( -145.794, 6.47975 )
 scale = Vector2( 0.404985, 0.404985 )
 texture = ExtResource( 8 )
 
@@ -108,30 +244,25 @@ position = Vector2( -184.673, 6.47974 )
 scale = Vector2( 0.404985, 0.404985 )
 texture = ExtResource( 8 )
 
-[node name="image1920" type="Sprite" parent="image1942"]
-position = Vector2( 61.5577, -55.0779 )
-scale = Vector2( 0.34891, 0.34891 )
-texture = ExtResource( 12 )
-
 [node name="duck" type="Sprite" parent="."]
 position = Vector2( 176, 344 )
 rotation = -0.0523599
 texture = ExtResource( 4 )
 
 [node name="bullet-yellow" type="Sprite" parent="duck"]
-position = Vector2( 80, -8 )
+position = Vector2( 248.916, -10.9878 )
 texture = ExtResource( 9 )
 
 [node name="bullet-yellow2" type="Sprite" parent="duck"]
-position = Vector2( 168, -8 )
+position = Vector2( 305.677, -24.035 )
 texture = ExtResource( 9 )
 
 [node name="bullet-yellow3" type="Sprite" parent="duck"]
-position = Vector2( 304, -8 )
+position = Vector2( 441.072, -8.92831 )
 texture = ExtResource( 9 )
 
 [node name="bullet-yellow4" type="Sprite" parent="duck"]
-position = Vector2( 481.436, -14.8239 )
+position = Vector2( 561.745, -18.6261 )
 texture = ExtResource( 9 )
 
 [node name="Label" type="Label" parent="."]
@@ -166,9 +297,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="image1920" type="Sprite" parent="."]
+position = Vector2( 936, 232 )
+scale = Vector2( 1.25, 1.25 )
+texture = ExtResource( 12 )
+
 [node name="g1375" type="Sprite" parent="."]
-position = Vector2( 928, 456 )
-scale = Vector2( 0.746154, 0.746154 )
+position = Vector2( 896, 504 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 11 )
 
 [node name="PlayButton" type="Button" parent="."]
@@ -207,6 +343,9 @@ text = "Story"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Intro = SubResource( 12 )
 [connection signal="pressed" from="sky/FullScreenButton" to="." method="_on_FullScreenButton_pressed"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="StoryButton" to="." method="_on_StoryButton_pressed"]
