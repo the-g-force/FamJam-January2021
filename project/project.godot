@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="FamJam-January2021"
-run/main_scene="res://src/Level.tscn"
+run/main_scene="res://src/SplashScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
