@@ -56,7 +56,7 @@ func _physics_process(delta):
 		_explosionfollow.unit_offset = lerp(0,1,_time_elapsed)
 		if _time_elapsed >= 0.9:
 			var _explosion:Node2D = load("res://src/Explosion.tscn").instance()
-			_explosion.position = $Explosionpath/PathFollow2D/Sprite.get_global_transform().origin
+			_explosion.position = $Explosionpath/PathFollow2D/JetDuck/Sprite.get_global_transform().origin
 			get_tree().get_root().add_child(_explosion)
 			queue_free()
 
