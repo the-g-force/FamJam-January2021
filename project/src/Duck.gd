@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-export var GRAVITY := 1.0
-export var SPEED := 10
-export var MAX_SPEED := 15
+export var gravity := 20.0
+export var speed := 50
+export var max_speed := 15
 
 var _velocity := Vector2.ZERO
 
@@ -22,14 +22,15 @@ func _physics_process(delta):
 	if direction.length_squared() == 0:
 		_velocity = Vector2.ZERO
 	
-	_velocity += direction * SPEED
-	_velocity.y += GRAVITY
+	_velocity += direction * speed * delta
 	
-	_velocity = _velocity.clamped(MAX_SPEED)
+	
+	_velocity = _velocity.clamped(max_speed)
 	
 	position += _velocity
+	position.y += gravity * delta
 	
 
 func _draw():
 	var shape = $CollisionShape2D.shape
-	draw_rect(Rect2(0,0,shape.extents.x, shape.extents.y), Color.tan)
+	draw_rect(Rect2(-shape.extents.x/2,-shape.extents.y/2,shape.extents.x*2, shape.extents.y*2), Color.tan)
