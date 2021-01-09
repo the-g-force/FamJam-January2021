@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://fonts/TurretRoadExtraBoldFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/TurretRoad-Bold.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
 
 [node name="HUD" type="Node2D"]
 
@@ -18,13 +25,18 @@ __meta__ = {
 }
 
 [node name="WaveLabel" type="Label" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 487.812
-margin_top = 290.56
-margin_right = 531.812
-margin_bottom = 308.56
-custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+margin_left = 453.794
+margin_top = 276.071
+margin_right = 594.794
+margin_bottom = 320.071
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "WAVE 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
