@@ -9,7 +9,7 @@ const _Alien := preload("res://src/Alien.tscn")
 
 var screensize:Vector2
 var _enemies_in_wave := 0
-var _time_between_waves := 2
+var _time_between_waves := 3
 var _wave_size := 1
 var _group_0 := [Vector2(0, 150), Vector2(0, 300), Vector2(0, 450)]
 var _group_1 := [Vector2(150, 150), Vector2(0, 300), Vector2(150, 450)]
@@ -19,6 +19,8 @@ var _group_2 := [Vector2(0, 150), Vector2(150, 300), Vector2(0, 450)]
 func _ready():
 	$Timer.start(_time_between_waves)
 	screensize = get_viewport_rect().size
+	yield(get_tree().create_timer(1), "timeout")
+	emit_signal("new_wave", _wave_size)
 
 
 func _new_wave():
@@ -44,6 +46,8 @@ func _alien_off_screen():
 	_enemies_in_wave -= 1
 	if _enemies_in_wave == 0:
 		$Timer.start(_time_between_waves)
+		yield(get_tree().create_timer(1), "timeout")
+		emit_signal("new_wave", _wave_size)
 
 
 func _alien_destroyed(_what):
@@ -52,8 +56,9 @@ func _alien_destroyed(_what):
 	if _enemies_in_wave == 0:
 		$Timer.start(_time_between_waves)
 		emit_signal("wave_over")
+		yield(get_tree().create_timer(1), "timeout")
+		emit_signal("new_wave", _wave_size)
 
 
 func _on_Timer_timeout():
 	_new_wave()
-	emit_signal("new_wave", _wave_size)
