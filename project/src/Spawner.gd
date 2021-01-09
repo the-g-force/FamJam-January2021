@@ -1,6 +1,9 @@
 extends Node2D
 
 signal alien_created(alien)
+signal new_wave(wave)
+signal wave_over
+signal alien_destroyed
 
 const _Alien := preload("res://src/Alien.tscn")
 
@@ -25,7 +28,6 @@ func _new_wave():
 		var wave:Array = get("_group_"+str(wave_type))
 		groups.append(wave)
 		_enemies_in_wave += wave.size()
-	print("NEW WAVE! "+str(_enemies_in_wave))
 	for wave in groups:
 		for point in wave:
 			var alien := _Alien.instance()
@@ -40,17 +42,18 @@ func _new_wave():
 
 func _alien_off_screen():
 	_enemies_in_wave -= 1
-	print(str(_enemies_in_wave))
 	if _enemies_in_wave == 0:
 		$Timer.start(_time_between_waves)
 
 
 func _alien_destroyed(_what):
 	_enemies_in_wave -= 1
-	print(str(_enemies_in_wave))
+	emit_signal("alien_destroyed")
 	if _enemies_in_wave == 0:
 		$Timer.start(_time_between_waves)
+		emit_signal("wave_over")
 
 
 func _on_Timer_timeout():
 	_new_wave()
+	emit_signal("new_wave", _wave_size)

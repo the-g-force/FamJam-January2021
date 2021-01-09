@@ -64,3 +64,6 @@ visible = false
 [node name="Spawner" parent="." instance=ExtResource( 10 )]
 [connection signal="death_complete" from="Duck" to="." method="_on_Duck_death_complete"]
 [connection signal="alien_created" from="Spawner" to="." method="_on_Spawner_alien_created"]
+[connection signal="alien_destroyed" from="Spawner" to="." method="_on_Spawner_alien_destroyed"]
+[connection signal="new_wave" from="Spawner" to="." method="_on_Spawner_new_wave"]
+[connection signal="wave_over" from="Spawner" to="." method="_on_Spawner_wave_over"]
