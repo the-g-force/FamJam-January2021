@@ -8,11 +8,11 @@ func _ready():
 
 
 func _on_PlayButton_pressed():
-	get_tree().change_scene("res://src/Level.tscn")
+	var _ignored := get_tree().change_scene("res://src/Level.tscn")
 
 
 func _on_StoryButton_pressed():
-	get_tree().change_scene("res://src/StoryScene.tscn")
+	var _ignored := get_tree().change_scene("res://src/StoryScene.tscn")
 
 
 func _on_FullScreenButton_pressed():
