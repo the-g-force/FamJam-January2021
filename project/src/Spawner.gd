@@ -27,7 +27,7 @@ func _ready():
 func _new_wave():
 	var groups := []
 	for _i in _wave_size:
-		var wave_type := 3#randi()%5
+		var wave_type := randi()%5
 		var wave:Array = get("_group_"+str(wave_type))
 		groups.append(wave)
 		_enemies_in_wave += wave.size()
