@@ -19,9 +19,7 @@ var _group_4 := [Vector2(0, 300), Vector2(150, 150), Vector2(150,450), Vector2(3
 
 
 func _ready():
-	$Timer.start(_time_between_waves)
 	screensize = get_viewport_rect().size
-	$PreliminaryTimer.start()
 
 
 func _new_wave():
@@ -45,10 +43,15 @@ func _new_wave():
 
 
 func _alien_off_screen():
-	_enemies_in_wave -= 1
-	if _enemies_in_wave == 0:
-		$Timer.start(_time_between_waves)
-		$PreliminaryTimer.start()
+	# If the alien went off screen because the round is over, 
+	# then there's nothing to do about it.
+	if Global.duck_is_dead:
+		return
+	else:
+		_enemies_in_wave -= 1
+		if _enemies_in_wave == 0:
+			$Timer.start(_time_between_waves)
+			$PreliminaryTimer.start()
 
 
 func _alien_destroyed(_what):
