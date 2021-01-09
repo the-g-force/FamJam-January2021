@@ -57,7 +57,7 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="Animation" id=12]
 resource_name = "Intro"
-length = 2.5
+length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("duck/bullet-yellow:position")
 tracks/0/interp = 1
@@ -149,10 +149,10 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 0.6, 2.5 ),
-"transitions": PoolRealArray( 6.27667, 6.27667, 1 ),
+"times": PoolRealArray( 0, 0.6, 2.5, 3 ),
+"transitions": PoolRealArray( 6.27667, 6.27667, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1096, 440 ), Vector2( 896, 504 ), Vector2( 728, 504 ) ]
+"values": [ Vector2( 1096, 440 ), Vector2( 896, 504 ), Vector2( 728, 504 ), Vector2( 1128, 504 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("g1375:scale")
@@ -173,10 +173,10 @@ tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0, 1, 2.5 ),
-"transitions": PoolRealArray( 5.65686, 2.63902, 2.63902 ),
+"times": PoolRealArray( 0, 1, 2.5, 3 ),
+"transitions": PoolRealArray( 5.65686, 2.63902, 2.63902, 1 ),
 "update": 0,
-"values": [ Vector2( 1120, 152 ), Vector2( 936, 232 ), Vector2( 744, 248 ) ]
+"values": [ Vector2( 1120, 152 ), Vector2( 936, 232 ), Vector2( 744, 248 ), Vector2( 1120, 248 ) ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("image1920:scale")
@@ -221,10 +221,10 @@ tracks/13/loop_wrap = true
 tracks/13/imported = false
 tracks/13/enabled = true
 tracks/13/keys = {
-"times": PoolRealArray( 0, 0.8 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.8, 1.5, 1.9, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -80, 336 ), Vector2( 248, 360 ) ]
+"values": [ Vector2( -80, 336 ), Vector2( 248, 360 ), Vector2( 248, 360 ), Vector2( 248, 360 ), Vector2( 1150, 360 ) ]
 }
 tracks/14/type = "value"
 tracks/14/path = NodePath("duck:scale")
@@ -317,19 +317,20 @@ __meta__ = {
 }
 
 [node name="image1942" type="Sprite" parent="."]
-position = Vector2( 1144, 304 )
-scale = Vector2( 1.5, 1.5 )
+position = Vector2( 744, 752 )
+rotation = -0.605629
+scale = Vector2( 3.14231, 3.14231 )
 texture = ExtResource( 3 )
 
 [node name="bullet-blue" type="Sprite" parent="image1942"]
 visible = false
-position = Vector2( -55.0779, 6.47975 )
+position = Vector2( -93.9564, 6.47975 )
 scale = Vector2( 0.404985, 0.404985 )
 texture = ExtResource( 8 )
 
 [node name="bullet-blue2" type="Sprite" parent="image1942"]
 visible = false
-position = Vector2( -106.916, 6.47975 )
+position = Vector2( -145.794, 6.47975 )
 scale = Vector2( 0.404985, 0.404985 )
 texture = ExtResource( 8 )
 
@@ -346,28 +347,28 @@ scale = Vector2( 0.404985, 0.404985 )
 texture = ExtResource( 8 )
 
 [node name="duck" type="Sprite" parent="."]
-position = Vector2( -80, 336 )
+position = Vector2( 1150, 360 )
 scale = Vector2( 1.75163, 1.75163 )
 z_index = 20
 texture = ExtResource( 4 )
 
 [node name="bullet-yellow" type="Sprite" parent="duck"]
-position = Vector2( 4.56717, 13.7015 )
+position = Vector2( 470.419, 9.13436 )
 texture = ExtResource( 9 )
 
 [node name="bullet-yellow2" type="Sprite" parent="duck"]
 visible = false
-position = Vector2( 102.788, 13.7017 )
+position = Vector2( 300, 13.702 )
 texture = ExtResource( 9 )
 
 [node name="bullet-yellow3" type="Sprite" parent="duck"]
 visible = false
-position = Vector2( 304, -8 )
+position = Vector2( 441.072, -8.92831 )
 texture = ExtResource( 9 )
 
 [node name="bullet-yellow4" type="Sprite" parent="duck"]
 visible = false
-position = Vector2( 481.436, -14.8239 )
+position = Vector2( 561.745, -18.6261 )
 texture = ExtResource( 9 )
 
 [node name="Node2D" parent="duck" instance=ExtResource( 10 )]
@@ -405,13 +406,13 @@ __meta__ = {
 }
 
 [node name="image1920" type="Sprite" parent="."]
-position = Vector2( 1120, 152 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 1120, 248 )
+scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 12 )
 
 [node name="g1375" type="Sprite" parent="."]
-position = Vector2( 1096, 440 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 1128, 504 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 11 )
 
 [node name="PlayButton" type="Button" parent="."]
