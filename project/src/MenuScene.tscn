@@ -147,7 +147,7 @@ tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0, 0.6 ),
-"transitions": PoolRealArray( 1, 1 ),
+"transitions": PoolRealArray( 6.27667, 6.27667 ),
 "update": 0,
 "values": [ Vector2( 1096, 440 ), Vector2( 896, 504 ) ]
 }
@@ -159,7 +159,7 @@ tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0, 0.6 ),
-"transitions": PoolRealArray( 1, 12.996 ),
+"transitions": PoolRealArray( 6.27667, 6.27667 ),
 "update": 0,
 "values": [ Vector2( 0.5, 0.5 ), Vector2( 1.5, 1.5 ) ]
 }
@@ -171,7 +171,7 @@ tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"transitions": PoolRealArray( 5.65686, 5.65686 ),
 "update": 0,
 "values": [ Vector2( 1120, 152 ), Vector2( 936, 232 ) ]
 }
@@ -183,9 +183,57 @@ tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 6.27667 ),
+"transitions": PoolRealArray( 5.65686, 5.65686 ),
 "update": 0,
 "values": [ Vector2( 0.5, 0.5 ), Vector2( 1.25, 1.25 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("image1942:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 0.574349, 1 ),
+"update": 0,
+"values": [ Vector2( 1144, 304 ), Vector2( 760, 360 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("image1942:scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 0.574349, 1 ),
+"update": 0,
+"values": [ Vector2( 1.5, 1.5 ), Vector2( 3.14231, 3.14231 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("duck:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -80, 336 ), Vector2( 248, 360 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("duck:scale")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0.8 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.75163, 1.75163 ) ]
 }
 
 [node name="MenuScene" type="Control"]
@@ -220,49 +268,57 @@ __meta__ = {
 }
 
 [node name="image1942" type="Sprite" parent="."]
-position = Vector2( 808, 352 )
-scale = Vector2( 2.46923, 2.46923 )
+position = Vector2( 816.704, 351.731 )
+scale = Vector2( 2.89979, 2.89979 )
 texture = ExtResource( 3 )
 
 [node name="bullet-blue" type="Sprite" parent="image1942"]
-position = Vector2( -55.0779, 6.47975 )
+visible = false
+position = Vector2( -86.1807, 6.47975 )
 scale = Vector2( 0.404985, 0.404985 )
 texture = ExtResource( 8 )
 
 [node name="bullet-blue2" type="Sprite" parent="image1942"]
-position = Vector2( -106.916, 6.47975 )
+visible = false
+position = Vector2( -138.018, 6.47975 )
 scale = Vector2( 0.404985, 0.404985 )
 texture = ExtResource( 8 )
 
 [node name="bullet-blue3" type="Sprite" parent="image1942"]
+visible = false
 position = Vector2( -155.514, 6.47975 )
 scale = Vector2( 0.404985, 0.404985 )
 texture = ExtResource( 8 )
 
 [node name="bullet-blue4" type="Sprite" parent="image1942"]
+visible = false
 position = Vector2( -184.673, 6.47974 )
 scale = Vector2( 0.404985, 0.404985 )
 texture = ExtResource( 8 )
 
 [node name="duck" type="Sprite" parent="."]
-position = Vector2( 176, 344 )
-rotation = -0.0523599
+position = Vector2( 278.065, 390.065 )
+scale = Vector2( 1.75163, 1.75163 )
 texture = ExtResource( 4 )
 
 [node name="bullet-yellow" type="Sprite" parent="duck"]
-position = Vector2( 80, -8 )
+visible = false
+position = Vector2( 215.133, -10.3902 )
 texture = ExtResource( 9 )
 
 [node name="bullet-yellow2" type="Sprite" parent="duck"]
-position = Vector2( 168, -8 )
+visible = false
+position = Vector2( 278.142, -20.828 )
 texture = ExtResource( 9 )
 
 [node name="bullet-yellow3" type="Sprite" parent="duck"]
-position = Vector2( 304, -8 )
+visible = false
+position = Vector2( 413.658, -8.74265 )
 texture = ExtResource( 9 )
 
 [node name="bullet-yellow4" type="Sprite" parent="duck"]
-position = Vector2( 481.436, -14.8239 )
+visible = false
+position = Vector2( 545.683, -17.8657 )
 texture = ExtResource( 9 )
 
 [node name="Label" type="Label" parent="."]
@@ -298,13 +354,13 @@ __meta__ = {
 }
 
 [node name="image1920" type="Sprite" parent="."]
-position = Vector2( 1120, 152 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 1067.93, 174.64 )
+scale = Vector2( 0.712254, 0.712254 )
 texture = ExtResource( 12 )
 
 [node name="g1375" type="Sprite" parent="."]
-position = Vector2( 1096, 440 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 896, 504 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 11 )
 
 [node name="PlayButton" type="Button" parent="."]

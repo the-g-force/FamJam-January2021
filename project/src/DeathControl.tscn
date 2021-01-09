@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/DeathControl.gd" type="Script" id=1]
 [ext_resource path="res://fonts/TurretRoad-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/duckxx.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -16,6 +17,22 @@ font_data = ExtResource( 2 )
 [sub_resource type="DynamicFont" id=3]
 size = 18
 font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "death-screen"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("duckxx:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 2.92817, 2.92817 ),
+"update": 0,
+"values": [ Vector2( 726.253, 717.589 ), Vector2( 726.253, 351.884 ) ]
+}
 
 [node name="DeathControl" type="Control"]
 anchor_right = 1.0
@@ -65,5 +82,13 @@ text = "Play Again"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "death-screen"
+anims/death-screen = SubResource( 4 )
+
+[node name="duckxx" type="Sprite" parent="."]
+position = Vector2( 726.253, 709.963 )
+texture = ExtResource( 3 )
 [connection signal="pressed" from="MenuButton" to="." method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="PlayAgainButton" to="." method="_on_PlayAgainButton_pressed"]
