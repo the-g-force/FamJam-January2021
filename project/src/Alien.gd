@@ -25,7 +25,7 @@ func _process(delta):
 	if position.y >= get_viewport_rect().size.y-40 and destroyed:
 		var _explosion:Node2D = load("res://src/Explosion.tscn").instance()
 		_explosion.position = get_global_transform().origin
-		get_tree().get_root().add_child(_explosion)
+		get_parent().add_child(_explosion)
 		queue_free()
 	if collision!=null and not destroyed:
 		damage()
@@ -41,7 +41,7 @@ func _process(delta):
 func _on_Timer_timeout():
 	var bullet:Node2D = _AlienBullet.instance()
 	bullet.position = get_global_transform().origin
-	get_tree().get_root().add_child(bullet)
+	get_parent().add_child(bullet)
 
 
 func _on_VisibilityNotifier2D_screen_exited():

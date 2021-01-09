@@ -61,7 +61,7 @@ func _physics_process(delta):
 		if _time_elapsed >= 0.9:
 			var _explosion:Node2D = load("res://src/Explosion.tscn").instance()
 			_explosion.position = $Explosionpath/PathFollow2D/JetDuck.get_global_transform().origin
-			get_tree().get_root().add_child(_explosion)
+			get_parent().add_child(_explosion)
 			emit_signal("death_complete")
 			queue_free()
 
