@@ -14,6 +14,7 @@ onready var _death_control := $DeathControl
 func _ready():
 	randomize()
 	Global.duck_is_dead = false
+	Global.wave = 1
 	screensize = get_viewport_rect().size
 	Jukebox.play_game_track()
 
@@ -39,9 +40,10 @@ func _on_Spawner_alien_destroyed():
 func _on_Spawner_new_wave(wave:int):
 	if not Global.duck_is_dead:
 		$HUD/WaveLabel.visible = true
-		$HUD/WaveLabel.text = "WAVE "+str(wave)
+		$HUD/WaveLabel.text = "WAVE "+str(Global.wave)
 		yield(get_tree().create_timer(2), "timeout")
 		$HUD/WaveLabel.visible = false
+		Global.wave += 1
 
 
 func _on_Spawner_wave_over():

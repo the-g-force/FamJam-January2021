@@ -6,6 +6,7 @@
 script/source = "extends Node
 
 var duck_is_dead := false
+var wave := 1
 
 onready var _button_sound := $ButtonSound
 
