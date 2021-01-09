@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/MenuScene.gd" type="Script" id=1]
 [ext_resource path="res://assets/Title_screen.ogg" type="AudioStream" id=2]
+[ext_resource path="res://assets/image1942.png" type="Texture" id=3]
+[ext_resource path="res://assets/duck.png" type="Texture" id=4]
+[ext_resource path="res://assets/sky.png" type="Texture" id=5]
+[ext_resource path="res://assets/background.png" type="Texture" id=6]
+[ext_resource path="res://assets/foreground.png" type="Texture" id=7]
+[ext_resource path="res://assets/bullet-blue.png" type="Texture" id=8]
+[ext_resource path="res://assets/bullet-yellow.png" type="Texture" id=9]
 
 [node name="MenuScene" type="Control"]
 anchor_right = 1.0
@@ -9,6 +16,28 @@ anchor_bottom = 1.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="sky" type="Sprite" parent="."]
+position = Vector2( 136, 304 )
+texture = ExtResource( 5 )
+
+[node name="background" type="Sprite" parent="sky"]
+position = Vector2( -64, 0 )
+texture = ExtResource( 6 )
+
+[node name="foreground" type="Sprite" parent="sky"]
+position = Vector2( 152, 0 )
+texture = ExtResource( 7 )
+
+[node name="FullScreenButton" type="CheckButton" parent="sky"]
+margin_left = 313.234
+margin_top = 186.507
+margin_right = 459.234
+margin_bottom = 226.507
+text = "Fullscreen"
+__meta__ = {
 "_edit_use_anchors_": false
 }
 
@@ -37,15 +66,32 @@ stream = ExtResource( 2 )
 autoplay = true
 bus = "Music"
 
-[node name="FullScreenButton" type="CheckButton" parent="."]
-margin_left = 449.234
-margin_top = 490.507
-margin_right = 595.234
-margin_bottom = 530.506
-text = "Fullscreen"
+[node name="Control" type="Control" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -20.0
+margin_right = 20.0
+margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="duck" type="Sprite" parent="Control"]
+position = Vector2( -236, 280 )
+texture = ExtResource( 4 )
+
+[node name="image1942" type="Sprite" parent="Control"]
+position = Vector2( 308, 256 )
+scale = Vector2( 2.46923, 2.46923 )
+texture = ExtResource( 3 )
+
+[node name="bullet-yellow" type="Sprite" parent="."]
+position = Vector2( 336, 272 )
+texture = ExtResource( 9 )
+
+[node name="bullet-blue" type="Sprite" parent="."]
+position = Vector2( 664, 272 )
+texture = ExtResource( 8 )
+[connection signal="pressed" from="sky/FullScreenButton" to="." method="_on_FullScreenButton_pressed"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="StoryButton" to="." method="_on_StoryButton_pressed"]
-[connection signal="pressed" from="FullScreenButton" to="." method="_on_FullScreenButton_pressed"]
