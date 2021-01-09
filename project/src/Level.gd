@@ -13,6 +13,7 @@ onready var _death_control := $DeathControl
 
 func _ready():
 	randomize()
+	Global.duck_is_dead = false
 	screensize = get_viewport_rect().size
 	Jukebox.play_game_track()
 
