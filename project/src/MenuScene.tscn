@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://src/MenuScene.gd" type="Script" id=1]
 [ext_resource path="res://fonts/TurretRoad-Bold.ttf" type="DynamicFontData" id=2]
@@ -9,43 +9,48 @@
 [ext_resource path="res://assets/foreground.png" type="Texture" id=7]
 [ext_resource path="res://assets/bullet-blue.png" type="Texture" id=8]
 [ext_resource path="res://assets/bullet-yellow.png" type="Texture" id=9]
-[ext_resource path="res://fonts/Roboto-Regular.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://assets/g1375.png" type="Texture" id=11]
 [ext_resource path="res://assets/image1920.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 72
+outline_size = 1
+outline_color = Color( 1, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 48
+outline_size = 1
+outline_color = Color( 1, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=13]
-bg_color = Color( 0.67451, 0.188235, 0.188235, 1 )
-
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.65098, 0.568627, 0.662745, 1 )
-
-[sub_resource type="StyleBoxFlat" id=10]
-bg_color = Color( 0.219608, 0.0509804, 0.0509804, 1 )
-
-[sub_resource type="DynamicFont" id=3]
-font_data = ExtResource( 10 )
-
-[sub_resource type="Theme" id=11]
-
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.67451, 0.188235, 0.188235, 1 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.65098, 0.568627, 0.662745, 1 )
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.219608, 0.0509804, 0.0509804, 1 )
 
-[sub_resource type="DynamicFont" id=5]
-font_data = ExtResource( 10 )
+[sub_resource type="DynamicFont" id=6]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=7]
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.67451, 0.188235, 0.188235, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.65098, 0.568627, 0.662745, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.219608, 0.0509804, 0.0509804, 1 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 24
+font_data = ExtResource( 2 )
 
 [node name="MenuScene" type="Control"]
 anchor_right = 1.0
@@ -133,9 +138,9 @@ texture = ExtResource( 9 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -333.0
-margin_top = 50.0
+margin_top = 29.0
 margin_right = 333.0
-margin_bottom = 210.0
+margin_bottom = 189.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.360784, 0, 0, 1 )
 text = "Commander Quacks"
@@ -175,10 +180,10 @@ margin_left = -61.5
 margin_top = 93.5
 margin_right = 61.5
 margin_bottom = 158.5
-custom_styles/hover = SubResource( 13 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/normal = SubResource( 10 )
-custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "Play"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -193,11 +198,11 @@ margin_left = -61.5
 margin_top = -32.5
 margin_right = 61.5
 margin_bottom = 32.5
-theme = SubResource( 11 )
-custom_styles/hover = SubResource( 9 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/normal = SubResource( 12 )
-custom_fonts/font = SubResource( 5 )
+theme = SubResource( 7 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
 text = "Story"
 __meta__ = {
 "_edit_use_anchors_": false

@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/DeathControl.gd" type="Script" id=1]
 [ext_resource path="res://fonts/TurretRoad-Bold.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://fonts/TurretRoad-Regular.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -16,7 +15,7 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 18
-font_data = ExtResource( 3 )
+font_data = ExtResource( 2 )
 
 [node name="DeathControl" type="Control"]
 anchor_right = 1.0
