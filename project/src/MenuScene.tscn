@@ -66,6 +66,26 @@ stream = ExtResource( 2 )
 autoplay = true
 bus = "Music"
 
+[node name="image1942" type="Sprite" parent="."]
+position = Vector2( 800, 256 )
+scale = Vector2( 2.46923, 2.46923 )
+texture = ExtResource( 3 )
+
+[node name="bullet-blue" type="Sprite" parent="image1942"]
+position = Vector2( -45.3582, 6.47975 )
+scale = Vector2( 0.404985, 0.404985 )
+texture = ExtResource( 8 )
+
+[node name="bullet-blue2" type="Sprite" parent="image1942"]
+position = Vector2( -84.2368, 6.47975 )
+scale = Vector2( 0.404985, 0.404985 )
+texture = ExtResource( 8 )
+
+[node name="bullet-blue3" type="Sprite" parent="image1942"]
+position = Vector2( -136.075, 6.47975 )
+scale = Vector2( 0.404985, 0.404985 )
+texture = ExtResource( 8 )
+
 [node name="Control" type="Control" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
@@ -77,21 +97,21 @@ __meta__ = {
 }
 
 [node name="duck" type="Sprite" parent="Control"]
-position = Vector2( -236, 280 )
+position = Vector2( -244, 376 )
+rotation = -0.127409
 texture = ExtResource( 4 )
 
-[node name="image1942" type="Sprite" parent="Control"]
-position = Vector2( 308, 256 )
-scale = Vector2( 2.46923, 2.46923 )
-texture = ExtResource( 3 )
-
-[node name="bullet-yellow" type="Sprite" parent="."]
-position = Vector2( 336, 272 )
+[node name="bullet-yellow3" type="Sprite" parent="Control/duck"]
+position = Vector2( 320, 8 )
 texture = ExtResource( 9 )
 
-[node name="bullet-blue" type="Sprite" parent="."]
-position = Vector2( 664, 272 )
-texture = ExtResource( 8 )
+[node name="bullet-yellow2" type="Sprite" parent="Control/duck"]
+position = Vector2( 136, 8 )
+texture = ExtResource( 9 )
+
+[node name="bullet-yellow" type="Sprite" parent="Control/duck"]
+position = Vector2( 80, 8 )
+texture = ExtResource( 9 )
 [connection signal="pressed" from="sky/FullScreenButton" to="." method="_on_FullScreenButton_pressed"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="StoryButton" to="." method="_on_StoryButton_pressed"]
