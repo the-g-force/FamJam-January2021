@@ -36,7 +36,7 @@ func _new_wave():
 			var _error = alien.connect("destroyed", self, "_alien_destroyed")
 			_error = alien.connect("went_off_screen", self, "_alien_off_screen")
 			emit_signal("alien_created", alien)
-		yield(get_tree().create_timer(6), "timeout")
+		yield(get_tree().create_timer(4), "timeout")
 	_wave_size += 1
 
 
