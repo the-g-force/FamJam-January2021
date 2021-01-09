@@ -66,4 +66,5 @@ func _physics_process(delta):
 
 func damage():
 	_exploding = true
+	Global.duck_is_dead = true
 	$CollisionShape2D.set_deferred("disabled", true)

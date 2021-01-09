@@ -42,10 +42,11 @@ func _process(delta):
 
 
 func _on_Timer_timeout():
-	var bullet:Node2D = _AlienBullet.instance()
-	bullet.position = get_global_transform().origin
-	get_parent().add_child(bullet)
-	_shoot_sound.play()
+	if not Global.duck_is_dead:
+		var bullet:Node2D = _AlienBullet.instance()
+		bullet.position = get_global_transform().origin
+		get_parent().add_child(bullet)
+		_shoot_sound.play()
 
 
 func _on_VisibilityNotifier2D_screen_exited():

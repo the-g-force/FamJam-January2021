@@ -5,6 +5,8 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node
 
+var duck_is_dead := false
+
 onready var _button_sound := $ButtonSound
 
 func play_button_sound():

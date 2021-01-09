@@ -22,13 +22,7 @@ func _process(delta):
 	$HUD/Label.text = "Score: "+str(score)
 
 
-func _on_Alien_destroyed(_alien:Object):
-	print("Alien was destroyed, get some points")
-	score += 1
-
-
 func _on_Duck_death_complete():
-	get_tree().paused = true
 	_death_control.visible = true
 
 
@@ -41,10 +35,11 @@ func _on_Spawner_alien_destroyed():
 
 
 func _on_Spawner_new_wave(wave:int):
-	$HUD/WaveLabel.visible = true
-	$HUD/WaveLabel.text = "WAVE "+str(wave)
-	yield(get_tree().create_timer(2), "timeout")
-	$HUD/WaveLabel.visible = false
+	if not Global.duck_is_dead:
+		$HUD/WaveLabel.visible = true
+		$HUD/WaveLabel.text = "WAVE "+str(wave)
+		yield(get_tree().create_timer(2), "timeout")
+		$HUD/WaveLabel.visible = false
 
 
 func _on_Spawner_wave_over():

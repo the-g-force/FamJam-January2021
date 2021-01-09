@@ -20,6 +20,7 @@ func _ready():
 	$Timer.start(_time_between_waves)
 	screensize = get_viewport_rect().size
 	$PreliminaryTimer.start()
+	print(str(Global.duck_is_dead))
 
 
 func _new_wave():
@@ -30,13 +31,14 @@ func _new_wave():
 		groups.append(wave)
 		_enemies_in_wave += wave.size()
 	for wave in groups:
-		for point in wave:
-			var alien := _Alien.instance()
-			alien.position.y = point.y
-			alien.position.x = screensize.x+point.x
-			var _error = alien.connect("destroyed", self, "_alien_destroyed")
-			_error = alien.connect("went_off_screen", self, "_alien_off_screen")
-			emit_signal("alien_created", alien)
+		if not Global.duck_is_dead:
+			for point in wave:
+				var alien := _Alien.instance()
+				alien.position.y = point.y
+				alien.position.x = screensize.x+point.x
+				var _error = alien.connect("destroyed", self, "_alien_destroyed")
+				_error = alien.connect("went_off_screen", self, "_alien_off_screen")
+				emit_signal("alien_created", alien)
 		yield(get_tree().create_timer(4), "timeout")
 	_wave_size += 1
 
