@@ -5,4 +5,4 @@ func _ready():
 
 
 func _on_MainMenuButton_pressed():
-	get_tree().change_scene("res://src/MenuScene.tscn")
+	var _ignored := get_tree().change_scene("res://src/MenuScene.tscn")
