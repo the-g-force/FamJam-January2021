@@ -2,9 +2,10 @@ class_name Alien
 extends KinematicBody2D
 
 signal destroyed(location)
+signal went_off_screen
 
 export var speed := 100
-export var shoot_delay := 2
+export var shoot_delay := 2.0
 var _destroyed := false
 
 onready var _AlienBullet := load("res://src/AlienBullet.tscn")
@@ -12,6 +13,7 @@ onready var _AlienBullet := load("res://src/AlienBullet.tscn")
 
 func _ready():
 	var anim := randi()%7
+	shoot_delay += rand_range(-0.5,1.5)
 	$Sprite.play(str(anim))
 	$Timer.start(shoot_delay)
 
@@ -45,11 +47,14 @@ func _on_Timer_timeout():
 
 
 func _on_VisibilityNotifier2D_screen_exited():
-	queue_free()
+	if not _destroyed:
+		emit_signal("went_off_screen")
+		queue_free()
 
 
 func damage():
-	emit_signal("destroyed", self)
-	$CollisionShape2D.set_deferred("disabled", true)
-	_destroyed = true
-	$Timer.stop()
+	if not _destroyed:
+		emit_signal("destroyed", self)
+		$CollisionShape2D.set_deferred("disabled", true)
+		_destroyed = true
+		$Timer.stop()
