@@ -11,24 +11,14 @@
 [ext_resource path="res://assets/sfx/alien_shoot.wav" type="AudioStream" id=9]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 20.0724
-height = 37.3647
+radius = 32.891
+height = 63.3277
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "5",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "6",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
@@ -41,14 +31,24 @@ animations = [ {
 "name": "4",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 8 ) ],
 "loop": true,
-"name": "3",
+"name": "6",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "3",
 "speed": 5.0
 } ]
 
@@ -64,6 +64,7 @@ rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
+autostart = true
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 position = Vector2( 61.1159, 3.06761 )
@@ -72,10 +73,11 @@ scale = Vector2( 3.85522, 2.76977 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.943878, -32.0917 )
 frames = SubResource( 2 )
-animation = "3"
+animation = "1"
 centered = false
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="tree_entered" from="Timer" to="." method="_on_Timer_tree_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
