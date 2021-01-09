@@ -11,8 +11,8 @@
 [ext_resource path="res://assets/sfx/alien_shoot.wav" type="AudioStream" id=9]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 20.0724
-height = 37.3647
+radius = 32.891
+height = 63.3277
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -26,9 +26,14 @@ animations = [ {
 "name": "1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "6",
+"name": "4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "0",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
@@ -36,19 +41,14 @@ animations = [ {
 "name": "2",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "4",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "3",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 8 ) ],
 "loop": true,
-"name": "0",
+"name": "6",
 "speed": 5.0
 } ]
 
@@ -72,7 +72,7 @@ scale = Vector2( 3.85522, 2.76977 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.943878, -32.0917 )
 frames = SubResource( 2 )
-animation = "3"
+animation = "1"
 centered = false
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="."]

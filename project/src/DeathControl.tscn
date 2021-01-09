@@ -19,7 +19,7 @@ size = 18
 font_data = ExtResource( 2 )
 
 [sub_resource type="Animation" id=4]
-resource_name = "death-screen"
+resource_name = "death"
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("duckxx:position")
@@ -84,11 +84,10 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "death-screen"
-anims/death-screen = SubResource( 4 )
+anims/death = SubResource( 4 )
 
 [node name="duckxx" type="Sprite" parent="."]
-position = Vector2( 726.253, 709.963 )
+position = Vector2( 726.253, 717.589 )
 texture = ExtResource( 3 )
 [connection signal="pressed" from="MenuButton" to="." method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="PlayAgainButton" to="." method="_on_PlayAgainButton_pressed"]
