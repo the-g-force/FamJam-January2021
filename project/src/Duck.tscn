@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Duck.gd" type="Script" id=1]
 [ext_resource path="res://src/JetDuck.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/sfx/duck_shoot.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 33, 38 )
@@ -32,3 +33,6 @@ rotation = -1.52581
 
 [node name="JetDuck" parent="Explosionpath/PathFollow2D" instance=ExtResource( 2 )]
 rotation = 1.57316
+
+[node name="ShootSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )

@@ -16,7 +16,7 @@ onready var _bullet_spawn_point := $BulletSpawnPoint
 onready var _explosionfollow := $Explosionpath/PathFollow2D
 onready var _screen_size := get_viewport_rect().size
 onready var _max_y := _screen_size.y - 100
-
+onready var _shoot_sound := $ShootSoundPlayer
 
 
 func _physics_process(delta):
@@ -48,6 +48,7 @@ func _physics_process(delta):
 		position.y = clamp(position.y, 0, _max_y)
 		
 		if Input.is_action_just_pressed("fire"):
+			_shoot_sound.play()
 			var bullet : Node2D = _DuckBullet.instance()
 			bullet.position = position + $BulletSpawnPoint.position
 			get_parent().add_child(bullet)
