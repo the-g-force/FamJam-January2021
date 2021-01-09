@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/background.png" type="Texture" id=1]
 [ext_resource path="res://src/Level.gd" type="Script" id=2]
 [ext_resource path="res://src/Duck.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/the_test.ogg" type="AudioStream" id=4]
+[ext_resource path="res://assets/foreground.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 556.391, 25 )
@@ -13,11 +14,18 @@ script = ExtResource( 2 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2( 2048, 0 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Background"]
 texture = ExtResource( 1 )
+centered = false
+
+[node name="Foreground" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 1.22, 1 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Foreground"]
+texture = ExtResource( 5 )
 centered = false
 
 [node name="Timer" type="Timer" parent="."]
