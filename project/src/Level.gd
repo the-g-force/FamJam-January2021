@@ -14,6 +14,7 @@ onready var _death_control := $DeathControl
 func _ready():
 	randomize()
 	screensize = get_viewport_rect().size
+	Jukebox.play_game_track()
 
 
 func _process(delta):
