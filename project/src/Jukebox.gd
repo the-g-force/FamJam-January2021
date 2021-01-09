@@ -6,12 +6,14 @@ export var game_track : AudioStream
 
 
 func play_menu_track():
-	if stream != menu_track:
-		stream = menu_track
-		playing = true
+	_play_if_different(menu_track)
 	
 	
 func play_game_track():
-	stream = game_track
-	playing = true
-	
+	_play_if_different(game_track)
+
+
+func _play_if_different(new_stream:AudioStream)->void:
+	if stream != new_stream:
+		stream = new_stream
+		playing = true
