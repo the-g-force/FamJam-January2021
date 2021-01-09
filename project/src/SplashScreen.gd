@@ -10,6 +10,7 @@ func _process(delta):
 
 func _input(event):
 	if _is_continue_trigger(event):
+		Global.play_button_sound()
 		var _ignored := get_tree().change_scene("res://src/MenuScene.tscn")
 
 

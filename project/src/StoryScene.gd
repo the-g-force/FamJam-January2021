@@ -5,6 +5,7 @@ func _ready():
 
 
 func _on_MainMenuButton_pressed():
+	Global.play_button_sound()
 	_go_to_main_menu()
 
 
