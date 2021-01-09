@@ -27,7 +27,7 @@ texture = ExtResource( 7 )
 centered = false
 
 [node name="Moon" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 1.5874, -1.5874 )
+position = Vector2( 4.76221, -3.1748 )
 motion_scale = Vector2( 0.29, 1 )
 motion_mirroring = Vector2( 2048, 0 )
 
