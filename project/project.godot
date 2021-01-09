@@ -9,19 +9,19 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Area2D",
+"base": "KinematicBody2D",
 "class": "Alien",
 "language": "GDScript",
 "path": "res://src/Alien.gd"
 }, {
 "base": "KinematicBody2D",
-"class": "Bullet",
+"class": "Duck",
 "language": "GDScript",
-"path": "res://src/Bullet.gd"
+"path": "res://src/Duck.gd"
 } ]
 _global_script_class_icons={
 "Alien": "",
-"Bullet": ""
+"Duck": ""
 }
 
 [application]

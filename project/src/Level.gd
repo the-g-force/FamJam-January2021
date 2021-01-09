@@ -20,18 +20,13 @@ func _process(delta):
 	$ParallaxBackground.scroll_offset.x -= background_scroll_speed * delta
 
 
-func _alien_died(location:Vector2):
-	pass
-
-
 func _on_Timer_timeout():
 	var alien_location := rand_range(0, screensize.y)
 	var alien_instance := alien.instance()
-	if scrolling_left:
-		alien_instance.position = Vector2(screensize.x, alien_location)
-		alien_instance.go_to_left = true
-	else:
-		alien_instance.position = Vector2(0, alien_location)
-		alien_instance.go_to_left = false
-	var _ignore = alien_instance.connect("dead", self, "_alien_died")
+	alien_instance.position = Vector2(screensize.x, alien_location)
+	var _ignore = alien_instance.connect("destroyed", self, "_on_Alien_destroyed")
 	$Aliens.add_child(alien_instance)
+
+
+func _on_Alien_destroyed(_alien:Object):
+	print("Alien was destroyed, get some points")

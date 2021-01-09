@@ -1,14 +1,10 @@
-class_name Bullet
-extends KinematicBody2D
+extends Area2D
 
-var good:bool
-var going_left:bool
 export var speed := 500
 
 func _physics_process(delta):
-	if going_left: speed = -500
-	elif not going_left: speed = 500
-	position.x += speed * delta
+	position.x -= speed * delta
+
 
 func _draw():
 	var shape = $CollisionShape2D.shape
@@ -17,3 +13,9 @@ func _draw():
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
+
+
+func _on_AlienBullet_body_entered(body):
+	if body is Duck:
+		body.damage()
+		queue_free()

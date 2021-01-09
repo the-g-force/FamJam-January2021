@@ -1,3 +1,4 @@
+class_name Duck
 extends KinematicBody2D
 
 export var gravity := 20.0
@@ -6,8 +7,7 @@ export var max_speed := 15
 
 var _velocity := Vector2.ZERO
 
-const _Bullet := preload("res://src/Bullet.tscn")
-
+onready var _DuckBullet := load("res://src/DuckBullet.tscn")
 onready var _bullet_spawn_point := $BulletSpawnPoint
 
 func _physics_process(delta):
@@ -28,13 +28,19 @@ func _physics_process(delta):
 	
 	_velocity += direction * speed * delta
 	_velocity = _velocity.clamped(max_speed)
+	_velocity.y += gravity * delta
 	
-	position += _velocity
-	position.y += gravity * delta
+	var collision := move_and_collide(_velocity)
+	if collision != null:
+		print("Dead")
+		queue_free()
 	
 	if Input.is_action_just_pressed("fire"):
-		var bullet := _Bullet.instance()
+		var bullet : Node2D = _DuckBullet.instance()
 		bullet.position = position + $BulletSpawnPoint.position
-		bullet.good = true
-		bullet.going_left = false
 		get_parent().add_child(bullet)
+
+
+func damage():
+	print("quack")
+	queue_free()
