@@ -7,6 +7,7 @@
 extents = Vector2( 13, 6 )
 
 [node name="DuckBullet" type="Area2D"]
+pause_mode = 2
 collision_layer = 4
 collision_mask = 2147483655
 script = ExtResource( 1 )

@@ -11,6 +11,7 @@
 [ext_resource path="res://src/Spawner.tscn" type="PackedScene" id=10]
 
 [node name="Level" type="Control"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
@@ -58,15 +59,13 @@ centered = false
 position = Vector2( 118.391, 268 )
 
 [node name="HUD" parent="." instance=ExtResource( 6 )]
-margin_left = 443.668
-margin_top = 1.7818
-margin_right = 443.668
-margin_bottom = 1.7818
 
 [node name="DeathControl" parent="." instance=ExtResource( 9 )]
+pause_mode = 2
 visible = false
 
 [node name="Spawner" parent="." instance=ExtResource( 10 )]
+pause_mode = 1
 [connection signal="death_complete" from="Duck" to="." method="_on_Duck_death_complete"]
 [connection signal="alien_created" from="Spawner" to="." method="_on_Spawner_alien_created"]
 [connection signal="alien_destroyed" from="Spawner" to="." method="_on_Spawner_alien_destroyed"]

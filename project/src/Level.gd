@@ -28,6 +28,7 @@ func _on_Alien_destroyed(_alien:Object):
 
 
 func _on_Duck_death_complete():
+	get_tree().paused = true
 	_death_control.visible = true
 
 
