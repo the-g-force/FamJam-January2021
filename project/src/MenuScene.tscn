@@ -225,12 +225,12 @@ scale = Vector2( 2.46923, 2.46923 )
 texture = ExtResource( 3 )
 
 [node name="bullet-blue" type="Sprite" parent="image1942"]
-position = Vector2( -93.9564, 6.47975 )
+position = Vector2( -55.0779, 6.47975 )
 scale = Vector2( 0.404985, 0.404985 )
 texture = ExtResource( 8 )
 
 [node name="bullet-blue2" type="Sprite" parent="image1942"]
-position = Vector2( -145.794, 6.47975 )
+position = Vector2( -106.916, 6.47975 )
 scale = Vector2( 0.404985, 0.404985 )
 texture = ExtResource( 8 )
 
@@ -250,19 +250,19 @@ rotation = -0.0523599
 texture = ExtResource( 4 )
 
 [node name="bullet-yellow" type="Sprite" parent="duck"]
-position = Vector2( 248.916, -10.9878 )
+position = Vector2( 80, -8 )
 texture = ExtResource( 9 )
 
 [node name="bullet-yellow2" type="Sprite" parent="duck"]
-position = Vector2( 305.677, -24.035 )
+position = Vector2( 168, -8 )
 texture = ExtResource( 9 )
 
 [node name="bullet-yellow3" type="Sprite" parent="duck"]
-position = Vector2( 441.072, -8.92831 )
+position = Vector2( 304, -8 )
 texture = ExtResource( 9 )
 
 [node name="bullet-yellow4" type="Sprite" parent="duck"]
-position = Vector2( 561.745, -18.6261 )
+position = Vector2( 481.436, -14.8239 )
 texture = ExtResource( 9 )
 
 [node name="Label" type="Label" parent="."]
@@ -298,13 +298,13 @@ __meta__ = {
 }
 
 [node name="image1920" type="Sprite" parent="."]
-position = Vector2( 936, 232 )
-scale = Vector2( 1.25, 1.25 )
+position = Vector2( 1120, 152 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 12 )
 
 [node name="g1375" type="Sprite" parent="."]
-position = Vector2( 896, 504 )
-scale = Vector2( 1.5, 1.5 )
+position = Vector2( 1096, 440 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 11 )
 
 [node name="PlayButton" type="Button" parent="."]
@@ -345,6 +345,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Intro"
 anims/Intro = SubResource( 12 )
 [connection signal="pressed" from="sky/FullScreenButton" to="." method="_on_FullScreenButton_pressed"]
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
