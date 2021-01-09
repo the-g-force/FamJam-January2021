@@ -50,5 +50,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func damage():
 	emit_signal("destroyed", self)
+	$CollisionShape2D.set_deferred("disabled", true)
 	_destroyed = true
 	$Timer.stop()

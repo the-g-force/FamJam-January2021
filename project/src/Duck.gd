@@ -41,10 +41,7 @@ func _physics_process(delta):
 		
 		var collision := move_and_collide(_velocity)
 		if collision != null:
-			if collision.collider is Alien:
-				if not collision.collider.destroyed:
 					damage()
-			else: damage()
 			
 		# Keep duck in playable area
 		position.x = clamp(position.x, 0, _screen_size.x/2)
@@ -68,3 +65,4 @@ func _physics_process(delta):
 
 func damage():
 	_exploding = true
+	$CollisionShape2D.set_deferred("disabled", true)
