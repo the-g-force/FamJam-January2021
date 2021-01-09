@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/SplashScreen.gd" type="Script" id=1]
+
+[node name="SplashScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 414.311
+margin_top = 307.956
+margin_right = 563.311
+margin_bottom = 321.956
+text = "The G-Force Presents..."
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 406.374
+margin_top = 442.884
+margin_right = 570.374
+margin_bottom = 456.884
+text = "Press any key to continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}

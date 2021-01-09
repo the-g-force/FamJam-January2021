@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/MenuScene.gd" type="Script" id=1]
+[ext_resource path="res://assets/Title_screen.ogg" type="AudioStream" id=2]
+
+[node name="MenuScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="Button" parent="."]
+margin_left = 498.443
+margin_top = 327.004
+margin_right = 536.443
+margin_bottom = 347.004
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
+bus = "Music"
+[connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
