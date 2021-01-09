@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/AlienBullet.gd" type="Script" id=1]
+[ext_resource path="res://assets/bullet-blue.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 13, 6 )
+extents = Vector2( 14.3297, 5.53208 )
 
 [node name="AlienBullet" type="Area2D"]
 collision_layer = 4
@@ -14,5 +15,10 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 0.148818, -0.297637 )
+scale = Vector2( 1.52087, 0.632913 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
 [connection signal="body_entered" from="." to="." method="_on_AlienBullet_body_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
