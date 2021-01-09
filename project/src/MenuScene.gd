@@ -1,10 +1,11 @@
 extends Control
 
 
-onready var _fullscreen_button := $FullScreenButton
+onready var _fullscreen_button := $sky/FullScreenButton
 
 func _ready():
 	_fullscreen_button.pressed = OS.window_fullscreen
+	Jukebox.play_menu_track()
 
 
 func _on_PlayButton_pressed():
