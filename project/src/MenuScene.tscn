@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/MenuScene.gd" type="Script" id=1]
+[ext_resource path="res://fonts/TurretRoad-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/image1942.png" type="Texture" id=3]
 [ext_resource path="res://assets/duck.png" type="Texture" id=4]
 [ext_resource path="res://assets/sky.png" type="Texture" id=5]
@@ -10,6 +11,8 @@
 [ext_resource path="res://assets/bullet-yellow.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
+size = 48
+font_data = ExtResource( 2 )
 
 [node name="MenuScene" type="Control"]
 anchor_right = 1.0
@@ -103,11 +106,14 @@ texture = ExtResource( 8 )
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -20.0
-margin_right = 20.0
-margin_bottom = 14.0
+margin_left = -222.0
+margin_right = 222.0
+margin_bottom = 160.0
 custom_fonts/font = SubResource( 1 )
-text = "Captain Commando"
+custom_colors/font_color = Color( 0.360784, 0, 0, 1 )
+text = "Commander Quacks"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
