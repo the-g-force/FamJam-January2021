@@ -37,7 +37,10 @@ func _physics_process(delta):
 		
 		var collision := move_and_collide(_velocity)
 		if collision != null:
-			damage()
+			if collision.collider is Alien:
+				if not collision.collider.destroyed:
+					damage()
+			else: damage()
 			
 		# Keep duck in playable area
 		position.x = clamp(position.x, 0, _screen_size.x/2)
@@ -47,6 +50,7 @@ func _physics_process(delta):
 			var bullet : Node2D = _DuckBullet.instance()
 			bullet.position = position + $BulletSpawnPoint.position
 			get_parent().add_child(bullet)
+	
 	elif _exploding:
 		_time_elapsed += delta
 		_explosionfollow.unit_offset = lerp(0,1,_time_elapsed)
