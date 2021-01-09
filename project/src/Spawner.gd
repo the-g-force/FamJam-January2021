@@ -1,16 +1,18 @@
 extends Node2D
 
+signal alien_created(alien)
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+const _Alien := preload("res://src/Alien.tscn")
+
+var screensize:Vector2
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	screensize = get_viewport_rect().size
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_Timer_timeout():
+	var alien := _Alien.instance()
+	alien.position.y = rand_range(0, screensize.y)
+	alien.position.x = screensize.x
+	emit_signal("alien_created", alien)
