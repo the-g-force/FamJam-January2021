@@ -9,6 +9,7 @@ export var shoot_delay := 2.0
 var _destroyed := false
 
 onready var _AlienBullet := load("res://src/AlienBullet.tscn")
+onready var _shoot_sound := $ShootSound
 
 
 func _ready():
@@ -44,6 +45,7 @@ func _on_Timer_timeout():
 	var bullet:Node2D = _AlienBullet.instance()
 	bullet.position = get_global_transform().origin
 	get_parent().add_child(bullet)
+	_shoot_sound.play()
 
 
 func _on_VisibilityNotifier2D_screen_exited():

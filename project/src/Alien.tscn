@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/Alien.gd" type="Script" id=1]
 [ext_resource path="res://assets/g1335.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/image1909.png" type="Texture" id=6]
 [ext_resource path="res://assets/image1920.png" type="Texture" id=7]
 [ext_resource path="res://assets/image1942.png" type="Texture" id=8]
+[ext_resource path="res://assets/sfx/alien_shoot.wav" type="AudioStream" id=9]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 20.0724
@@ -72,5 +73,8 @@ position = Vector2( 0.943878, -32.0917 )
 frames = SubResource( 2 )
 animation = "3"
 centered = false
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
