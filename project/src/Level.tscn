@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/background.png" type="Texture" id=1]
 [ext_resource path="res://src/Level.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 556.391, 25 )
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 2 )
@@ -18,4 +21,17 @@ centered = false
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Aliens" type="Node2D" parent="."]
+
+[node name="Ground" type="Area2D" parent="."]
+position = Vector2( 529, 576 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
