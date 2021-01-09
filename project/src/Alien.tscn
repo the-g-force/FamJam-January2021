@@ -1,10 +1,55 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/Alien.gd" type="Script" id=1]
+[ext_resource path="res://assets/g1335.png" type="Texture" id=2]
+[ext_resource path="res://assets/g1375.png" type="Texture" id=3]
+[ext_resource path="res://assets/g1391.png" type="Texture" id=4]
+[ext_resource path="res://assets/image1898.png" type="Texture" id=5]
+[ext_resource path="res://assets/image1909.png" type="Texture" id=6]
+[ext_resource path="res://assets/image1920.png" type="Texture" id=7]
+[ext_resource path="res://assets/image1942.png" type="Texture" id=8]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 20.0724
 height = 37.3647
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "6",
+"speed": 5.0
+} ]
 
 [node name="Alien" type="KinematicBody2D"]
 collision_layer = 2
@@ -18,5 +63,9 @@ shape = SubResource( 1 )
 [node name="Timer" type="Timer" parent="."]
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "3"
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

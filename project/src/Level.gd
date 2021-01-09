@@ -5,6 +5,7 @@ const alien := preload("res://src/Alien.tscn")
 
 var screensize : Vector2
 var scrolling_left := true #If true, aliens come from right
+var score := 0
 
 export var alien_spawn_interval := 2.0
 export var background_scroll_speed := 75.0
@@ -18,6 +19,7 @@ func _ready():
 
 func _process(delta):
 	$ParallaxBackground.scroll_offset.x -= background_scroll_speed * delta
+	$HUD/Label.text = "Aliens Destroyed: "+str(score)
 
 
 func _on_Timer_timeout():
@@ -30,6 +32,7 @@ func _on_Timer_timeout():
 
 func _on_Alien_destroyed(_alien:Object):
 	print("Alien was destroyed, get some points")
+	score += 1
 
 
 func _on_Ground_body_entered(body):

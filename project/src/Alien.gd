@@ -10,6 +10,8 @@ onready var _AlienBullet := load("res://src/AlienBullet.tscn")
 
 
 func _ready():
+	var anim := randi()%7
+	$Sprite.play(str(anim))
 	$Timer.start(shoot_delay)
 
 
@@ -18,15 +20,6 @@ func _process(delta):
 	var collision := move_and_collide(velocity)
 	if collision!=null:
 		damage()
-
-
-func _draw():
-	var color := Color.orange
-	var radius:float = $CollisionShape2D.shape.radius
-	var height:float = $CollisionShape2D.shape.height
-	draw_rect(Rect2(Vector2(-height/2,-radius), Vector2(height, radius*2)), color)
-	draw_circle(Vector2(height/2, 0), radius, color)
-	draw_circle(Vector2(-height/2, 0), radius, color)
 
 
 func _on_Timer_timeout():
