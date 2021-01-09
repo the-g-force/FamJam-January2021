@@ -14,19 +14,20 @@ var _wave_size := 1
 var _group_0 := [Vector2(0, 150), Vector2(0, 300), Vector2(0, 450)]
 var _group_1 := [Vector2(150, 150), Vector2(0, 300), Vector2(150, 450)]
 var _group_2 := [Vector2(0, 150), Vector2(150, 300), Vector2(0, 450)]
+var _group_3 := [Vector2(0, 50), Vector2(0, 550)]
+var _group_4 := [Vector2(0, 300), Vector2(150, 150), Vector2(150,450), Vector2(300,300)]
 
 
 func _ready():
 	$Timer.start(_time_between_waves)
 	screensize = get_viewport_rect().size
 	$PreliminaryTimer.start()
-	print(str(Global.duck_is_dead))
 
 
 func _new_wave():
 	var groups := []
 	for _i in _wave_size:
-		var wave_type := randi()%3
+		var wave_type := 3#randi()%5
 		var wave:Array = get("_group_"+str(wave_type))
 		groups.append(wave)
 		_enemies_in_wave += wave.size()
